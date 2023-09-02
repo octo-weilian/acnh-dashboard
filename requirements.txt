@@ -1,0 +1,9 @@
+psycopg2-binary
+pandas
+streamlit
+sqlalchemy
+plotly
+statsmodels
+tabulate
+wave
+pydub
