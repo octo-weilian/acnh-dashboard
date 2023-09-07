@@ -10,7 +10,7 @@ image_url = "https://media.tenor.com/PeegDtyzXS0AAAAC/animal-crossing-animal-cro
 
 image_html = f'''
 <p align="center">
-  <img width="600" height="370" style="border-radius:5%;box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px" src="{image_url}">
+  <img width="600" height="370" style="border-radius:5%;box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px" src="{image_url}">
 </p>
 '''
 st.markdown(image_html, unsafe_allow_html=True)

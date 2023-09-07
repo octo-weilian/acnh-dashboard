@@ -5,13 +5,13 @@ import pandas as pd
 import requests
 from src.db import load_tables
 
-postgres_uri = "postgresql+psycopg2://postgres:postgres@localhost:5432/acnh"
-alchemy_engine = create_engine(postgres_uri)
+sqlite_db = "sqlite:///acnh.db"
+alchemy_engine = create_engine(sqlite_db)
 db_connection = alchemy_engine.connect()
 
 if not db_connection.closed:
-    load_tables(path="./data",engine=alchemy_engine)
-
+    load_tables(path="./src/data",engine=alchemy_engine)
+    
 @st.cache_data(ttl=600)
 def get_data(query):
     df =  pd.read_sql(sql=query,con=db_connection)
