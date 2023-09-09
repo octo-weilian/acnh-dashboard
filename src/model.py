@@ -17,11 +17,13 @@ def question_to_nsql(question,engine,hf_api_key):
 	payload = {"inputs": prompt,"parameters":{"temperature":0.2,"max_new_tokens":100},"options":{'use_cache':'false'}}
 	headers = {"Authorization": f"Bearer {hf_api_key}"}
 	API_URL = "https://api-inference.huggingface.co/models/NumbersStation/nsql-350M"
+	
 	with requests.post(API_URL, headers=headers, json=payload) as r:
 		data = r.json()
 		try:
 			return data[0]['generated_text'].split('\n\n')[-1]
-		
 		except:
-			return data
+			 return data
+		
+	
 		

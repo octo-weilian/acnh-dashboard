@@ -3,6 +3,8 @@ from sqlalchemy import create_engine
 from pathlib import Path
 import pandas as pd
 import requests
+from datetime import datetime
+
 from src.db import load_tables
 
 sqlite_db = "sqlite:///acnh.db"
@@ -17,4 +19,5 @@ def get_data(query):
     df =  pd.read_sql(sql=query,con=db_connection)
     return df
 
-
+def get_ts():
+    return datetime.today().strftime("%Y-%m-%d %H:%M:%S")
